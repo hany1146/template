@@ -22,7 +22,7 @@
     />
     <style>
       table, th, td {
-        border: 1px solid black;
+        border: 0px solid black;
       }
       </style>
   </head>
@@ -590,9 +590,10 @@
               <div class="card-body">
                 <table style="width:100%">
                   <tr>
-                    <th>사진등록</th>                   
-                    <th>인적사항</th>
-                    <th>기타사항</th>
+                    <th style="width:30%"></th>                   
+                    <th></th>
+                    <th></th>
+                    <th></th>
                   </tr>
                   <tr>
                     <td align="center">
@@ -634,7 +635,7 @@
                     </td>
                     <td>
                       <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-8">
                           <div class="form-group">
                             <label for="basicInput">*이름</label>
                             <input
@@ -646,9 +647,10 @@
                           <div class="form-group">
                             <label for="basicInput">*연락처</label>
                             <input
-                              type="text"
+                              type="tel"
                               class="form-control"
                               id="basicInput"
+                              placeholder="010-0000-0000"
                             />
                           </div>
                           <div class="form-group">
@@ -657,6 +659,7 @@
                               type="text"
                               class="form-control"
                               id="basicInput"
+                              placeholder="1980-01-01"
                             />
                           </div>
                           <div class="form-group">
@@ -667,12 +670,62 @@
                               id="basicInput"
                             />
                           </div>
+                          
                         </div>
                       </div>
                     </td>
                     <td>
                       <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label for="basicInput">직책 또는 직위</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="basicInput"
+                              list="defaultTels"
+                            />
+                          </div>
+                          <datalist id="defaultTels">
+                            <option value="위원장"></option>
+                            <option value="부위원장"></option>
+                            <option value="회장"></option>
+                            <option value="부회장"></option>
+                            <option value="분과장"></option>
+                            <option value="고문"></option>
+                            <option value="간사"></option>
+                            <option value="사무국장"></option>
+                          </datalist>
+                          <div class="form-group">
+                            <label for="basicInput">*최초 위촉일</label>
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="basicInput"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="basicInput">*재위촉일</label>
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="basicInput"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="basicInput">연임횟수</label>
+                            <input disabled
+                              type="text"
+                              class="form-control"
+                              id="basicInput"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="row">
+                        <div class="col-md-8">
                           <div class="form-group">
                             <label for="basicInput">이메일</label>
                             <input
@@ -711,7 +764,60 @@
                   </tr>
                 </table>
               </div>
-            </div>
+
+              <!-- <div class="buttons align-self-end" >
+                <a href="#" class="btn btn-success"> &nbsp;&nbsp;저장&nbsp;&nbsp;  </a>
+              </div> -->
+
+              
+              <div class="card-body">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="liveToastBtn">
+                  
+                  &nbsp;&nbsp;저장&nbsp;&nbsp;
+                </button>
+                <div
+                  class="toast-container position-fixed bottom-0 end-0 p-3"                    >
+                  <div
+                    id="liveToast"
+                    class="toast"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true">
+                    <div class="toast-header">
+                      <svg
+                        class="bd-placeholder-img rounded me-2"
+                        width="20"
+                        height="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                      >
+                        <rect
+                          width="100%"
+                          height="100%"
+                          fill="#007aff"
+                        ></rect>
+                      </svg>
+                      <strong class="me-auto">알림</strong>
+                      
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="toast-body">
+                      <div class="spinner-border text-info" role="status"></div>저장하였습니다.
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
           </section>
 
           <!-- Basic File Browser start -->
@@ -812,5 +918,6 @@
     </div>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/pages/component-toasts.js"></script>
   </body>
 </html>
