@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Input - Mazer Admin Dashboard</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/main/app.css" />
     <link rel="stylesheet" href="assets/css/main/app-dark.css" />
+    <link rel="stylesheet" href="assets/css/pages/app.scss" />
     <link
       rel="shortcut icon"
       href="assets/images/logo/favicon.svg"
@@ -26,6 +29,8 @@
 
   <body>
     <script src="assets/js/initTheme.js"></script>
+    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="assets/js/pages/simple-datatables.js"></script>
     <div id="app">
       <div id="sidebar" class="active">
         <div class="sidebar-wrapper active">
@@ -303,7 +308,7 @@
                     <a href="table-datatable.html">Datatable</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="table-datatable-jquery.html">Datatable (jQuery)</a>
+                    <a href="table-datatable-jquery.html">Datatable (jQuery)</a>e
                   </li>
                 </ul>
               </li>
@@ -495,6 +500,65 @@
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>DataTable</h3>
+                <p class="text-subtitle text-muted">
+                  A sortable, searchable, paginated table without dependencies
+                  thanks to simple-datatables.
+                </p>
+              </div>
+              <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      DataTable
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <section class="section">
+            <div class="card">
+              <div class="card-header">Simple Datatable</div>
+                <div class="card-body">
+                  <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns"><div class="dataTable-top"><div class="dataTable-dropdown"><select class="dataTable-selector form-select"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select><label> entries per page</label></div><div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div></div><div class="dataTable-container"><table class="table table-striped dataTable-table" id="table1">
+                    <thead>
+                      <tr><th data-sortable="" style="width: 11.9711%;"><a href="#" class="dataTable-sorter">Name</a></th><th data-sortable="" style="width: 41.2797%;"><a href="#" class="dataTable-sorter">Email</a></th><th data-sortable="" style="width: 18.8854%;"><a href="#" class="dataTable-sorter">Phone</a></th><th data-sortable="" style="width: 16.5119%;"><a href="#" class="dataTable-sorter">City</a></th><th data-sortable="" style="width: 11.3519%;"><a href="#" class="dataTable-sorter">Status</a></th></tr>
+                    </thead>
+                    <tbody><tr><td>Graiden</td><td>vehicula.aliquet@semconsequat.co.uk</td><td>076 4820 8838</td><td>Offenburg</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Dale</td><td>fringilla.euismod.enim@quam.ca</td><td>0500 527693</td><td>New Quay</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Nathaniel</td><td>mi.Duis@diam.edu</td><td>(012165) 76278</td><td>Grumo Appula</td><td>
+                          <span class="badge bg-danger">Inactive</span>
+                        </td></tr><tr><td>Darius</td><td>velit@nec.com</td><td>0309 690 7871</td><td>Ways</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Oleg</td><td>rhoncus.id@Aliquamauctorvelit.net</td><td>0500 441046</td><td>Rossignol</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Kermit</td><td>diam.Sed.diam@anteVivamusnon.org</td><td>(01653) 27844</td><td>Patna</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Jermaine</td><td>sodales@nuncsit.org</td><td>0800 528324</td><td>Mold</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Ferdinand</td><td>gravida.molestie@tinciduntadipiscing.org</td><td>(016977) 4107</td><td>Marlborough</td><td>
+                          <span class="badge bg-danger">Inactive</span>
+                        </td></tr><tr><td>Kuame</td><td>Quisque.purus@mauris.org</td><td>(0151) 561 8896</td><td>Tresigallo</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr><tr><td>Deacon</td><td>Duis.a.mi@sociisnatoquepenatibus.com</td><td>07740 599321</td><td>Karapınar</td><td>
+                          <span class="badge bg-success">Active</span>
+                        </td></tr></tbody>
+                  </table></div><div class="dataTable-bottom"><div class="dataTable-info">Showing 1 to 10 of 26 entries</div><nav class="dataTable-pagination"><ul class="dataTable-pagination-list pagination pagination-primary"><li class="pager page-item"><a href="#" data-page="1" class="page-link">‹</a></li><li class="active page-item"><a href="#" data-page="1" class="page-link">1</a></li><li class="page-item"><a href="#" data-page="2" class="page-link">2</a></li><li class="page-item"><a href="#" data-page="3" class="page-link">3</a></li><li class="pager page-item"><a href="#" data-page="2" class="page-link">›</a></li></ul></nav></div></div>
+                </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="page-heading">
+          <div class="page-title">
+            <div class="row">
+              <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>위원관리</h3>
                 <p class="text-subtitle text-muted">
                   주민자치회 위원들을 관리할 수 있습니다.
@@ -531,8 +595,42 @@
                     <th>기타사항</th>
                   </tr>
                   <tr>
-                    <td>
-                      <input class="form-control" type="file" id="formFile"/>
+                    <td align="center">
+                      <img src="assets/images/user/add.png" >
+                      <br>
+                      <br>
+                      <script>
+                        document.querySelector("html").classList.add('js');
+
+                        var fileInput  = document.querySelector( ".input-file" ),  
+                            button     = document.querySelector( ".input-file-trigger" ),
+                            the_return = document.querySelector(".file-return");
+                              
+                        button.addEventListener( "keydown", function( event ) {  
+                            if ( event.keyCode == 13 || event.keyCode == 32 ) {  
+                                fileInput.focus();  
+                            }  
+                        });
+                        button.addEventListener( "click", function( event ) {
+                          fileInput.focus();
+                          return false;
+                        });  
+                        fileInput.addEventListener( "change", function( event ) {  
+                            the_return.innerHTML = this.value;  
+                        });  
+                      </script>
+
+                      <form action="#">
+                        <div class="input-file-container">  
+                          <input class="input-file" id="my-file" type="file">
+                          <label tabindex="0" for="my-file" class="input-file-trigger">사진파일 추가하기</label>
+                        </div>
+                        <p class="file-return"></p>
+                      </form>
+
+                      
+                      <!-- <input class="form-control" type="file" id="formFile"/> -->
+
                     </td>
                     <td>
                       <div class="row">
@@ -616,121 +714,13 @@
             </div>
           </section>
 
-          <!-- Input Style start -->
-          <section id="input-style">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Input Styles</h4>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <p>
-                          To set rounded border to input box, use
-                          <code>.round</code> class and to set square border to
-                          input box, use <code>.sqaure</code> class alongwith
-                          <code>.form-control</code> class.
-                        </p>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="roundText">Rounded Input</label>
-                          <input
-                            type="text"
-                            id="roundText"
-                            class="form-control round"
-                            placeholder="Rounded Input"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="squareText">Square Input</label>
-                          <input
-                            type="text"
-                            id="squareText"
-                            class="form-control square"
-                            placeholder="Square Input"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Input Style end -->
-
-          <!-- Horizontal Input start -->
-          <section id="horizontal-input">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Horizontal Input</h4>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <p>
-                          To make label in center of form-control, use
-                          <code>.col-form-label</code> class with
-                          <code>&lt;label&gt;</code> element. This is default
-                          bootstrap class.
-                        </p>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row align-items-center">
-                          <div class="col-lg-2 col-3">
-                            <label class="col-form-label">First Name</label>
-                          </div>
-                          <div class="col-lg-10 col-9">
-                            <input
-                              type="text"
-                              id="first-name"
-                              class="form-control"
-                              name="fname"
-                              placeholder="First Name"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row align-items-center">
-                          <div class="col-lg-2 col-3">
-                            <label class="col-form-label">Last Name</label>
-                          </div>
-                          <div class="col-lg-10 col-9">
-                            <input
-                              type="text"
-                              id="last-name"
-                              class="form-control"
-                              name="fname"
-                              placeholder="Last Name"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Horizontal Input end -->
-
           <!-- Basic File Browser start -->
           <section id="input-file-browser">
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">File Input</h4>
+                    <h4 class="card-title">회원 일괄 등록</h4>
                   </div>
 
                   <div class="card-body">
@@ -738,56 +728,12 @@
                       <div class="col-lg-6 col-md-12">
                         <div class="mb-3">
                           <label for="formFile" class="form-label"
-                            >Default file input example</label
+                            >아래 파일을 등록하세요.</label
                           >
                           <input
                             class="form-control"
                             type="file"
                             id="formFile"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="formFileMultiple" class="form-label"
-                            >Multiple files input example</label
-                          >
-                          <input
-                            class="form-control"
-                            type="file"
-                            id="formFileMultiple"
-                            multiple
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="formFileDisabled" class="form-label"
-                            >Disabled file input example</label
-                          >
-                          <input
-                            class="form-control"
-                            type="file"
-                            id="formFileDisabled"
-                            disabled
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-12">
-                        <div class="mb-3">
-                          <label for="formFileSm" class="form-label"
-                            >Small file input example</label
-                          >
-                          <input
-                            class="form-control form-control-sm"
-                            id="formFileSm"
-                            type="file"
-                          />
-                        </div>
-                        <div>
-                          <label for="formFileLg" class="form-label"
-                            >Large file input example</label
-                          >
-                          <input
-                            class="form-control form-control-lg"
-                            id="formFileLg"
-                            type="file"
                           />
                         </div>
                       </div>
@@ -805,166 +751,49 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Input with Icons</h4>
+                    <h4 class="card-title">회원 명단</h4>
                   </div>
-
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <p>
-                          For Input Box with icon use
-                          <code>.position-relative</code> class with
-                          <code>.form-group</code> and use class
-                          <code>.has-icon-left</code> or
-                          <code>.has-icon-right</code> class for icon on left
-                          side.
-                        </p>
-                      </div>
-                      <div class="col-sm-6">
-                        <h6>Left Icon</h6>
-                        <div class="form-group position-relative has-icon-left">
-                          <input
-                            type="text"
-                            class="form-control is-invalid"
-                            placeholder="Input with icon left"
-                          />
-                          <div class="form-control-icon">
-                            <i class="bi bi-person"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <h6>Right Icon</h6>
-                        <div
-                          class="form-group position-relative has-icon-right"
-                        >
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Icon Right, Default Input"
-                          />
-                          <div class="form-control-icon">
-                            <i class="bi bi-bookmarks"></i>
-                          </div>
-                        </div>
+                  
+                  <section class="section">
+                    <div class="card">
+                      <div class="card-header">Simple Datatable</div>
+                      <div class="card-body">
+                        <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns"><div class="dataTable-top"><div class="dataTable-dropdown"><select class="dataTable-selector form-select"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select><label> entries per page</label></div><div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div></div><div class="dataTable-container"><table class="table table-striped dataTable-table" id="table1">
+                          <thead>
+                            <tr><th data-sortable="" style="width: 11.9711%;"><a href="#" class="dataTable-sorter">Name</a></th><th data-sortable="" style="width: 41.2797%;"><a href="#" class="dataTable-sorter">Email</a></th><th data-sortable="" style="width: 18.8854%;"><a href="#" class="dataTable-sorter">Phone</a></th><th data-sortable="" style="width: 16.5119%;"><a href="#" class="dataTable-sorter">City</a></th><th data-sortable="" style="width: 11.3519%;"><a href="#" class="dataTable-sorter">Status</a></th></tr>
+                          </thead>
+                          <tbody><tr><td>Graiden</td><td>vehicula.aliquet@semconsequat.co.uk</td><td>076 4820 8838</td><td>Offenburg</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Dale</td><td>fringilla.euismod.enim@quam.ca</td><td>0500 527693</td><td>New Quay</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Nathaniel</td><td>mi.Duis@diam.edu</td><td>(012165) 76278</td><td>Grumo Appula</td><td>
+                                <span class="badge bg-danger">Inactive</span>
+                              </td></tr><tr><td>Darius</td><td>velit@nec.com</td><td>0309 690 7871</td><td>Ways</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Oleg</td><td>rhoncus.id@Aliquamauctorvelit.net</td><td>0500 441046</td><td>Rossignol</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Kermit</td><td>diam.Sed.diam@anteVivamusnon.org</td><td>(01653) 27844</td><td>Patna</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Jermaine</td><td>sodales@nuncsit.org</td><td>0800 528324</td><td>Mold</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Ferdinand</td><td>gravida.molestie@tinciduntadipiscing.org</td><td>(016977) 4107</td><td>Marlborough</td><td>
+                                <span class="badge bg-danger">Inactive</span>
+                              </td></tr><tr><td>Kuame</td><td>Quisque.purus@mauris.org</td><td>(0151) 561 8896</td><td>Tresigallo</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr><tr><td>Deacon</td><td>Duis.a.mi@sociisnatoquepenatibus.com</td><td>07740 599321</td><td>Karapınar</td><td>
+                                <span class="badge bg-success">Active</span>
+                              </td></tr></tbody>
+                        </table></div><div class="dataTable-bottom"><div class="dataTable-info">Showing 1 to 10 of 26 entries</div><nav class="dataTable-pagination"><ul class="dataTable-pagination-list pagination pagination-primary"><li class="pager page-item"><a href="#" data-page="1" class="page-link">‹</a></li><li class="active page-item"><a href="#" data-page="1" class="page-link">1</a></li><li class="page-item"><a href="#" data-page="2" class="page-link">2</a></li><li class="page-item"><a href="#" data-page="3" class="page-link">3</a></li><li class="pager page-item"><a href="#" data-page="2" class="page-link">›</a></li></ul></nav></div></div>
                       </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
               </div>
             </div>
           </section>
           <!-- Input with Icons end -->
 
-          <!-- Input Sizing start -->
-          <section id="input-sizing">
-            <div class="row match-height">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Control Sizing Option</h4>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <p>
-                          For different sizes of Input, Use classes like
-                          <code>.form-control-lg</code> &amp;
-                          <code>.form-control-sm</code> for Large, Small input
-                          box.
-                        </p>
-                      </div>
-                      <div class="col-sm-4">
-                        <h6>Large</h6>
-                        <input
-                          class="form-control form-control-lg"
-                          type="text"
-                          placeholder="Large Input"
-                        />
-                      </div>
-                      <div class="col-sm-4">
-                        <h6>Default</h6>
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Default Input"
-                        />
-                      </div>
-                      <div class="col-sm-4">
-                        <h6>Small</h6>
-                        <input
-                          class="form-control form-control-sm"
-                          type="text"
-                          placeholder="Small Input"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Input Sizing end -->
-
-          <!-- validations start -->
-          <section id="input-validation">
-            <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Input Validation States</h4>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <p>
-                          You can indicate invalid and valid form fields with
-                          <code>.is-invalid</code> and <code>.is-valid</code>.
-                          Note that <code>.invalid-feedback</code> is also
-                          supported with these classes.
-                        </p>
-                      </div>
-                      <div class="col-sm-6">
-                        <label for="valid-state">Valid State</label>
-                        <input
-                          type="text"
-                          class="form-control is-valid"
-                          id="valid-state"
-                          placeholder="Valid"
-                          value="Valid"
-                          required
-                        />
-                        <div class="valid-feedback">
-                          <i class="bx bx-radio-circle"></i>
-                          This is valid state.
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <label for="invalid-state">Invalid State</label>
-                        <input
-                          type="text"
-                          class="form-control is-invalid"
-                          id="invalid-state"
-                          placeholder="Invalid"
-                          value="Invalid"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          <i class="bx bx-radio-circle"></i>
-                          This is invalid state.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- validations end -->
-        </div>
-
+        
         <footer>
           <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
